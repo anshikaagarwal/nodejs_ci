@@ -7,7 +7,7 @@ beforeEach(async () => {
 });
 
 afterEach(async () => {
-    //await page.close();
+    await page.close();
 })
 
 test("testing text present in header", async () => {
