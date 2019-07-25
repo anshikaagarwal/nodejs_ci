@@ -15,7 +15,7 @@ class CustomPage {
 
         return new Proxy(customPage, {
             get: function (target, property) {
-                return target[property] || page[property] || browser[property];
+                return target[property] || browser[property] || page[property];
             }
         });
     }
