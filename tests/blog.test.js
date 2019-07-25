@@ -5,63 +5,63 @@ beforeEach(async () => {
     await page.goto('http://localhost:3000');
 });
 
-// describe('When logged in', async () => {
-//     beforeEach(async () => {
-//         await page.login();
-//         await page.click('a.btn-floating');
-//     });
-//     test('testing if blog form appears', async () => {
-//         const text = await page.getContentsOf('form label');
-//         console.log('form content=', text);
-//         expect(text).toEqual('Blog Title');
-//     });
+describe('When logged in', async () => {
+    beforeEach(async () => {
+        await page.login();
+        await page.click('a.btn-floating');
+    });
+    test('testing if blog form appears', async () => {
+        const text = await page.getContentsOf('form label');
+        console.log('form content=', text);
+        expect(text).toEqual('Blog Title');
+    });
 
-//     describe('and entered valid form inputs', async () => {
-//         beforeEach(async () => {
-//             await page.type('.title input', 'this is a title');
-//             await page.type('.content input', 'this is a content');
-//             await page.click('form button');
-//         });
+    describe('and entered valid form inputs', async () => {
+        beforeEach(async () => {
+            await page.type('.title input', 'this is a title');
+            await page.type('.content input', 'this is a content');
+            await page.click('form button');
+        });
 
-//         test('check if confirmation form appears after submitting form', async () => {
-//             const text3 = await page.getContentsOf('h5');
-//             console.log('text3=', text3);
-//             expect(text3).toEqual('Please confirm your entries');
-//         });
+        test('check if confirmation form appears after submitting form', async () => {
+            const text3 = await page.getContentsOf('h5');
+            console.log('text3=', text3);
+            expect(text3).toEqual('Please confirm your entries');
+        });
 
-//         test('check if blog is added after submitting form', async () => {
-//             await page.click('.green.btn-flat');
-//             await page.waitFor('.card');
+        test('check if blog is added after submitting form', async () => {
+            await page.click('.green.btn-flat');
+            await page.waitFor('.card');
 
-//             const title = await page.getContentsOf('.card-title');
-//             const content = await page.getContentsOf('p');
+            const title = await page.getContentsOf('.card-title');
+            const content = await page.getContentsOf('p');
 
-//             console.log('title=', title);
-//             console.log('content=', content);
+            console.log('title=', title);
+            console.log('content=', content);
 
-//             expect(title).toEqual('this is a title');
-//             expect(content).toEqual('this is a content');
-//         })
-//     })
+            expect(title).toEqual('this is a title');
+            expect(content).toEqual('this is a content');
+        })
+    })
 
-//     describe('and entered invalid content in form', async () => {
-//         beforeEach(async () => {
-//             await page.click('form button');
-//         });
+    describe('and entered invalid content in form', async () => {
+        beforeEach(async () => {
+            await page.click('form button');
+        });
 
-//         test('check if error message occur', async () => {
-//             const text1 = await page.getContentsOf('.title .red-text');
-//             const text2 = await page.getContentsOf('.content .red-text');
+        test('check if error message occur', async () => {
+            const text1 = await page.getContentsOf('.title .red-text');
+            const text2 = await page.getContentsOf('.content .red-text');
 
-//             console.log("text1=", text1);
-//             console.log("text2=", text2);
+            console.log("text1=", text1);
+            console.log("text2=", text2);
 
-//             expect(text1).toEqual('You must provide a value');
-//             expect(text2).toEqual('You must provide a value');
-//         })
-//     })
+            expect(text1).toEqual('You must provide a value');
+            expect(text2).toEqual('You must provide a value');
+        })
+    })
 
-// });
+});
 
 test('check the response of api request when not logged in', async () => {
     // await page.login();

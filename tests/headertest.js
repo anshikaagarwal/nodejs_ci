@@ -7,22 +7,22 @@ beforeEach(async () => {
 });
 
 afterEach(async () => {
-    // await page.close();
+    //await page.close();
 })
 
-// test("testing text present in header", async () => {
-//     const text = await page.$eval('a.brand-logo', (el) => el.innerHTML);
-//     expect(text).toEqual('Blogster');
-// });
+test("testing text present in header", async () => {
+    const text = await page.$eval('a.brand-logo', (el) => el.innerHTML);
+    expect(text).toEqual('Blogster');
+});
 
-// test("testing OAuth flow while clicking login", async () => {
-//     var url = await page.url();
+test("testing OAuth flow while clicking login", async () => {
+    var url = await page.url();
 
-//     await page.click('.right a');
-//     url = await page.url();
-//     console.log("url after login clicked", url);
-//     expect(url).toMatch(/accounts\.google\.com/);
-// });
+    await page.click('.right a');
+    url = await page.url();
+    console.log("url after login clicked", url);
+    expect(url).toMatch(/accounts\.google\.com/);
+});
 
 test("shows logout after logged in", async () => {
     await page.login();
